@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Achievers Academy - Empowering Tomorrow's Leaders</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Font Awesome for social media icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- LOAD FONTS: Quattrocento (Main) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- REMOVED Playfair Display. Only loading Quattrocento -->
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Configure Tailwind for new fonts and palette --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-text': '#03261f', 
+                        'primary-bg': '#b8d6c7', 
+                        'secondary': '#d9fab8', 
+                        'background': '#F9FAFB', 
+                        'cta': '#b596f2', 
+                        'footer-dark': '#031f1a', 
+                    },
+                    fontFamily: {
+                        // "Throughout" font set to Quattrocento
+                        sans: ['Quattrocento', 'serif'],
+                        // H1 font set to Halissa, with generic serif fallback (Playfair Display removed)
+                        halissa: ['Halissa', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-shadow {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .filter-btn.active {
+            background-color: '#b8d6c7';
+            color: '#03261f'; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .hero-background {
+            background-image: url('https://globalachieversacademy.com/wp-content/uploads/DV4A0063.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .whatsapp-container {
+            position: fixed;
+            bottom: 1.5rem; 
+            right: 1.5rem; 
+            z-index: 50;
+            display: flex;
+            align-items: center;
+        }
+        .whatsapp-bubble {
+            background-color: #25D366;
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700; /* Bold for Quattrocento readability */
+            margin-right: 0.5rem; 
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateX(10px);
+            white-space: nowrap;
+        }
+        .whatsapp-container:hover .whatsapp-bubble {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-background font-sans antialiased text-primary-text">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="https://globalachieversacademy.com/wp-content/uploads/Global-Achievers-Academy-Horizontal-Logo_DIGITAL_HOLLY.svg" 
+                     alt="Global Achievers Academy Logo" 
+                     class="h-10 w-auto" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/150x40/b8d6c7/03261f?text=GAA+Logo';">
+            </a>
+            <nav class="hidden md:flex space-x-8 text-lg font-bold items-center">
+                <a href="#locations" class="text-gray-600 hover:text-primary-text transition duration-150">Our Destinations</a>
+                <a href="#availability" class="text-gray-600 hover:text-primary-text transition duration-150">Our Programmes</a> 
+                <a href="#" class="px-4 py-2 bg-secondary text-primary-text font-bold rounded-full hover:opacity-80 transition duration-150">Enrol Today</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-background text-white relative min-h-[450px] md:min-h-[550px] pt-40 pb-2 md:pt-72 md:pb-10">
+        <div class="absolute inset-0 bg-primary-text opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+            <!-- UPDATED: H1 uses font-halissa -->
+            <h1 class="font-halissa text-5xl sm:text-7xl mb-6 leading-tight text-white tracking-wide">
+ACADEMIC SUMMER SCHOOLS FOR TEENAGE STUDENTS           </h1> 
+
+            <H2 class="text-xl sm:text-2xl mb-8 text-white/90 max-w-3xl mx-auto font-bold">
+We offer international summer & spring school programmes in leadership, architecture and sustainable energy that build  confidence, skills and university-ready students.            </H2>
+            <a href="https://globalachieversacademy.com/wp-content/uploads/Global-Achievers-Academy-Digital-Brochure-web.pdf" target="_blank" class="inline-block px-10 py-4 bg-secondary text-primary-text font-bold text-lg rounded-full shadow-lg hover:opacity-80 transition duration-300 transform hover:scale-105">
+                Download our brochure
+            </a>
+        </div>
+    </section>
+
+    <!-- About Global Achievers Academy Section -->
+    <section id="about" class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary-text text-center mb-6">About Global Achievers Academy</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
+                    Global Achievers Academy nurtures visionary leaders and empowers young people aged 13-17 to explore their potential and make a global impact. Our international summer school equips students with the skills needed for a connected world. EC Young Learners and the team behind Global Achievers Academy has been delivering outstanding summer camp experiences to young people for over 45 years. Each year we welcome in excess of 13,000 students to our range of young learner summer camps across the globe.</p>
+
+               
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
+                    By joining, you’ll develop leadership, self-confidence, and broaden your horizons, making memories and gaining skills that last a lifetime.
+                </p>
+                <p class="text-xl font-bold text-[#17593b]">
+                    Choose Global Achievers Academy for an unforgettable summer and a brighter future!
+                </p>
+</div>
+                <!-- ACCREDITATIONS -->
+                <div class="mt-10 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-bold text-primary-text mb-6 text-center">Accreditations & memberships from around the world</h3>
+                    <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10 max-w-4xl mx-auto">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/2024/04/Accreditation-Logos1.svg" alt="Accreditation Logo 1" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x40/d9fab8/03261f?text=Accred+1';">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/2024/05/beta.svg" alt="Accreditation Logo 2" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x40/d9fab8/03261f?text=Accred+2';">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/2024/04/Accreditation-Logos-31.svg" alt="Accreditation Logo 3" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x40/d9fab8/03261f?text=Accred+3';">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/2024/04/Accreditation-Logos-41.svg" alt="Accreditation Logo 4" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x40/d9fab8/03261f?text=Accred+4';">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/Mta-logo-svg-e1743081017899.png" alt="MTA Logo" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x40/d9fab8/03261f?text=MTA';">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/trinity-logo-for-web.png" alt="Trinity Logo" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x40/d9fab8/03261f?text=Trinity';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- 3 Locations Section -->
+   <section id="locations" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary-text text-center mb-12">Our 3 Global Destinations</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Location 1: London -->
+                <div class="bg-white rounded-xl overflow-hidden card-shadow">
+                    <div class="relative">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/IMG-1.jpg" alt="London skyline" class="h-48 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/b8d6c7/03261f?text=London+UK'">
+                        <span class="absolute bottom-3 left-3 text-sm font-bold text-primary-text bg-primary-bg/80 px-4 py-1 rounded-full shadow-lg">Summer Programmes</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-text mb-2">London, UK</h3>
+                        <p class="text-gray-600 mb-4 font-medium">Known as ‘London’s Global University’, UCL is the perfect choice for our Global Achievers Academy. The campus is well connected to the many iconic sights of London and close to the City of London and the financial district. Excursions to Oxford and Cambridge enhance the program. Morning activities and evening fun create a balanced schedule, with an exhilarating Thorpe Park visit awaiting!
+
+</p>
+                    </div>
+                </div>
+
+                <!-- Location 2: Boston -->
+                <div class="bg-white rounded-xl overflow-hidden card-shadow">
+                    <div class="relative">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/IMG.jpg" alt="Boston Cityscape" class="h-48 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/b8d6c7/03261f?text=Boston+USA'">
+                        <span class="absolute bottom-3 left-3 text-sm font-bold text-primary-text bg-primary-bg/80 px-4 py-1 rounded-full shadow-lg">Summer Programmes</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-text mb-2">Boston, USA</h3>
+                        <p class="text-gray-600 mb-4 font-medium">Founded in 1630, Boston is one of the US’s oldest municipalities and has played a key role in several US historic events. It is the capital and largest city in Massachusetts and today Boston is recognised as a global leader in higher education and academic research with both Harvard University and MIT based there. With a strong entrepreneurial vibe, the city is also seen as being a pioneer in innovation, making Boston the perfect location for Global Achievers Academy.</p>
+                    </div>
+                </div>
+
+                <!-- Location 3: Dubai -->
+                <div class="bg-white rounded-xl overflow-hidden card-shadow">
+                    <div class="relative">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/dubai-with-lines.png" alt="Dubai skyline" class="h-48 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/b8d6c7/03261f?text=Dubai+UAE'">
+                        <span class="absolute bottom-3 left-3 text-sm font-bold text-primary-text bg-secondary/80 px-4 py-1 rounded-full shadow-lg">Spring Programmes</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-text mb-2">Dubai, UAE</h3>
+                        <p class="text-gray-600 mb-4 font-medium">Dubai has rapidly emerged as a leading educational hub, offering a diverse and globally recognized academic environment. With branches of top international universities, state-of-the-art facilities, and a strong emphasis on innovation and research, this unique city attracts students from around the world. Dubai’s strategic location, multicultural society, and government support for education make it an ideal destination for high-quality learning and a therefore a perfect place for our Global Achievers Academy programmes.
+
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined Programmes & Availability Matrix -->
+    <section id="availability" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-primary-text text-center mb-6">Explore Our Programmes</h2>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center space-x-2 sm:space-x-4 mb-10 flex-wrap">
+                <button class="filter-btn active bg-primary-bg text-primary-text font-bold py-3 px-4 sm:px-6 rounded-full transition duration-300 mb-2 sm:mb-0" data-location="all">
+                    Show All Programmes
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-bold py-3 px-4 sm:px-6 rounded-full transition duration-300 hover:bg-gray-300 mb-2 sm:mb-0" data-location="London">
+                    London, UK
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-bold py-3 px-4 sm:px-6 rounded-full transition duration-300 hover:bg-gray-300 mb-2 sm:mb-0" data-location="Boston">
+                    Boston, USA
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-bold py-3 px-4 sm:px-6 rounded-full transition duration-300 hover:bg-gray-300 mb-2 sm:mb-0" data-location="Dubai">
+                    Dubai, UAE
+                </button>
+            </div>
+
+            <!-- Course Grid -->
+            <div id="course-grid" class="space-y-6">
+                <!-- Global Leadership -->
+                <div class="course-card bg-white p-6 rounded-xl border border-gray-200 shadow-lg w-full flex flex-col md:flex-row gap-6 items-start" data-locations="London,Boston,Dubai">
+                    <div class="w-full md:w-1/3 h-48 md:h-64 rounded-lg overflow-hidden flex-shrink-0">
+                        <img src="https://globalachieversacademy.com/wp-content/uploads/image-6-1.jpg" alt="Global Leadership Visual" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e0e0e0/555555?text=Leadership+Focus';">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-xl font-bold text-primary-text mb-2">Global Leadership</h4>
+                        
+                        <!-- Quick Facts - MOVED HERE -->
+                        <p class="text-gray-700 text-sm font-semibold mb-4">
+                            <span class="font-bold text-primary-text">Ages:</span> 13-17 
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Duration:</span> 10 Nights
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Dates:</span> Spring/Summer 2026
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Price (Starts):</span> £5,500 (London) / $4,650 (Dubai)
+                        </p>
+                        <!-- END Quick Facts -->
+
+                        <p class="text-gray-600 mb-4 font-medium">Our flagship global leadership programme is built around four diverse subjects that include leadership, finance & economics, sustainability & the environment, and technology & the future. As with all our programmes, we emphasise connections to the UN’s 17 Sustainable Development Goals.</br>
+
+Students explore topics such as strategic, ethical and social leadership, technology’s role in global change, entrepreneurship, environmental policy, governance, world cultures, economics, and wealth-building.</br>
+
+This diverse curriculum shapes changemakers, clarifies global business, and develops global citizens.</p>
+                    
+                        <h5 class="text-sm font-bold text-gray-500 mb-2">Available in:</h5>
+                        <div class="flex flex-wrap gap-3 location-tags-container">
+                            <div class="location-tag flex items-center text-xs font-bold bg-primary-bg text-primary-text px-3 py-1 rounded-full w-fit" data-tag-location="London"><i class="fa fa-map-marker mr-1"></i> London</div>
+                            <div class="location-tag flex items-center text-xs font-bold bg-primary-bg text-primary-text px-3 py-1 rounded-full w-fit" data-tag-location="Boston"><i class="fa fa-map-marker mr-1"></i> Boston</div>
+                            <div class="location-tag flex items-center text-xs font-bold bg-primary-bg text-primary-text px-3 py-1 rounded-full w-fit" data-tag-location="Dubai"><i class="fa fa-map-marker mr-1"></i> Dubai</div>
+                        </div>
+                        <!-- BUTTON LAYOUT CHANGE -->
+                        <div class="flex flex-col space-y-3 md:flex-row md:space-x-4 md:space-y-0 mt-4">
+                            <a href="https://globalachieversacademy.com/wp-content/uploads/Leadership-Timetables.pdf" target="_blank" class="w-full md:w-1/2 text-center py-2 px-4 bg-white border border-cta text-cta font-bold rounded-lg transition duration-300 hover:bg-cta/10 shadow-md">Sample Timetable</a>
+                            <a href="#" class="w-full md:w-1/2 text-center py-2 px-4 bg-cta text-white font-bold rounded-lg transition duration-300 hover:bg-[#a67cf2] shadow-md">Enrol</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="course-card bg-white p-6 rounded-xl border border-gray-200 shadow-lg w-full flex flex-col md:flex-row gap-6 items-start" data-locations="London,Dubai">
+                    <div class="w-full md:w-1/3 h-48 md:h-64 rounded-lg overflow-hidden flex-shrink-0">
+                         <img src="https://globalachieversacademy.com/wp-content/uploads/original-img.jpg" alt="Architecture Program Visual" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e0e0e0/555555?text=Architecture+Design';">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-xl font-bold text-primary-text mb-2">Architecture Programme</h4>
+                        
+                        <!-- Quick Facts - MOVED HERE -->
+                        <p class="text-gray-700 text-sm font-semibold mb-4">
+                            <span class="font-bold text-primary-text">Ages:</span> 13-17 
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Duration:</span> 10 Nights
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Dates:</span> Spring/Summer 2026
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Price (Starts):</span> £5,500 (London) / $4,650 (Dubai)
+                        </p>
+                        <!-- END Quick Facts -->
+
+                        <p class="text-gray-600 mb-4 font-medium">Our architecture curriculum covers key themes such as architectural history, materials and technology, sustainable design and the future of smart cities.
+
+Students learn how engineers and architects collaborate on projects, and the master planning behind mega development sites, building positioning and traffic flow.  We explore older buildings and consider how they may be designed in today’s world.</br>
+
+We look at the UN 17 sustainable development goals, in particular goals no 9 (industry, innovation and infrastructure) and no 11 (sustainable cities and communities).</br>
+
+Our students will also visit key buildings of architectural importance, as well as architectural innovation, local to their destination of study, to support their studies in a real life context.  They will also enjoy working in groups on mini projects.</p>
+                      
+                        <h5 class="text-sm font-bold text-gray-500 mb-2">Available in:</h5>
+                        <div class="flex flex-wrap gap-3 location-tags-container">
+                            <div class="location-tag flex items-center text-xs font-bold bg-primary-bg text-primary-text px-3 py-1 rounded-full w-fit" data-tag-location="London"><i class="fa fa-map-marker mr-1"></i> London</div>
+                            <div class="location-tag flex items-center text-xs font-bold bg-primary-bg text-primary-text px-3 py-1 rounded-full w-fit" data-tag-location="Dubai"><i class="fa fa-map-marker mr-1"></i> Dubai</div>
+                        </div>
+                        <!-- BUTTON LAYOUT CHANGE -->
+                        <div class="flex flex-col space-y-3 md:flex-row md:space-x-4 md:space-y-0 mt-4">
+                            <a href="https://globalachieversacademy.com/wp-content/uploads/Architecture-Timetables.pdf" target="_blank" class="w-full md:w-1/2 text-center py-2 px-4 bg-white border border-cta text-cta font-bold rounded-lg transition duration-300 hover:bg-cta/10 shadow-md">Sample Timetable</a>
+                            <a href="#" class="w-full md:w-1/2 text-center py-2 px-4 bg-cta text-white font-bold rounded-lg transition duration-300 hover:bg-[#a67cf2] shadow-md">Enrol</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oil & Gas -->
+                <div class="course-card bg-white p-6 rounded-xl border border-gray-200 shadow-lg w-full flex flex-col md:flex-row gap-6 items-start" data-locations="Dubai">
+                    <div class="w-full md:w-1/3 h-48 md:h-64 rounded-lg overflow-hidden flex-shrink-0">
+                         <img src="https://globalachieversacademy.com/wp-content/uploads/shutterstock_2460502037.png" alt="Sustainable Energy Program Visual" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e0e0e0/555555?text=Energy+Sector';">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-xl font-bold text-primary-text mb-2">Sustainable Oil & Gas</h4>
+                        
+                        <!-- Quick Facts - MOVED HERE -->
+                        <p class="text-gray-700 text-sm font-semibold mb-4">
+                            <span class="font-bold text-primary-text">Ages:</span> 13-17 
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Duration:</span> 10 Nights
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Dates:</span> Spring 2026
+                            <span class="mx-2 text-gray-400">|</span> 
+                            <span class="font-bold text-primary-text">Price (Dubai):</span> USD $4,650
+                        </p>
+                        <!-- END Quick Facts -->
+
+                        <p class="text-gray-600 mb-4 font-medium">Our unique and ground breaking sustainable oil and gas curriculum takes place in one of the global hubs for energy and innovation, Dubai!  Against the backdrop of this incredible city, our students will gain practical insights into the oil and gas industry and how it is an industry working hard to support sustainability in the modern world.</br>
+
+With a focus on the UN 17 sustainable development goal no 7, ‘Affordable and Clean Energy’, students will explore the full oil and gas development chain, including studies in to exploration, production and refining.  How technology is driving the future of more sustainable energies.</br>
+
+Students will work in small groups on practical projects, and their time in Dubai will include some industry relevant visits and workshops.</p>
+                      
+                        <h5 class="text-sm font-bold text-gray-500 mb-2">Available in:</h5>
+                        <div class="flex flex-wrap gap-3 location-tags-container">
+                            <div class="location-tag flex items-center text-xs font-bold bg-primary-bg text-primary-text px-3 py-1 rounded-full w-fit" data-tag-location="Dubai"><i class="fa fa-map-marker mr-1"></i> Dubai</div>
+                        </div>
+                        <!-- BUTTON LAYOUT CHANGE -->
+                        <div class="flex flex-col space-y-3 md:flex-row md:space-x-4 md:space-y-0 mt-4">
+                            <a href="https://globalachieversacademy.com/wp-content/uploads/Oil-Gas-Timetables.pdf" target="_blank" class="w-full md:w-1/2 text-center py-2 px-4 bg-white border border-cta text-cta font-bold rounded-lg transition duration-300 hover:bg-cta/10 shadow-md">Sample Timetable</a>
+                            <a href="#" class="w-full md:w-1/2 text-center py-2 px-4 bg-cta text-white font-bold rounded-lg transition duration-300 hover:bg-[#a67cf2] shadow-md">Enrol</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- NEW: Trinity College UCAS Points Announcement (Located where the X was) -->
+            <div class="mt-12 p-8 bg-white border-2 border-cta shadow-xl rounded-xl text-center max-w-4xl mx-auto">
+                <div class="flex justify-center items-center mb-4">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-primary-text">New for Summer 2026: 30 UCAS Points Opportunity
+                    </h3>
+                </div>
+                <p class="text-lg text-gray-700 font-medium mb-4">
+                    Starting Summer 2026, students joining our London programmes can choose to take the Trinity College London Communication Exam
+                Passing the exam can earn you 30 UCAS Tariff points to support your university application.</p>
+                <p class="text-xl font-bold text-cta">
+
+                </p>
+            </div>
+            <!-- END NEW SECTION -->
+        </div>
+    </section>
+   <!-- NEW TESTIMONIALS SECTION -->
+<section id="testimonials" class="py-20 bg-white">
+    <style>
+        .video-responsive-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .video-responsive-container iframe {
+            width: 100%;
+            max-width: 560px;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+        }
+    </style>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-primary-text text-center mb-6">Hear From Our Global Achievers</h2>
+        <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+            Watch these short testimonials from students who have experienced our programmes.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Video 1 -->
+            <div class="video-responsive-container">
+                <iframe src="https://www.youtube.com/embed/R7AJh8qsNwc" 
+                        title="Global Achievers Academy Student Testimonials: Kristina" 
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-responsive-container">
+                <iframe src="https://www.youtube.com/embed/FqsDOip02Cg?list=PL4m0Ho92e_BMRcjd6mKSOcz94ftV9C3-i"
+                        title="Global Achievers Academy Student Testimonials: Paula" 
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END NEW TESTIMONIALS SECTION -->
+
+    <!-- Footer -->
+    <footer class="text-primary-text">
+        <div class="bg-primary-bg py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:flex md:justify-between md:items-start">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h5 class="text-xl font-bold mb-2">Global Achievers Academy</h5>
+                    <p class="text-sm text-primary-text/80 font-bold">Powered by EC © 2025</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-base md:text-sm text-center md:text-left mt-6 md:mt-0 max-w-sm md:max-w-none mx-auto font-bold">
+                    <a href="#" class="text-[#03261f]/80 hover:text-[#03261f] transition duration-150">Newsroom & Resources</a>
+                    <a href="#" class="text-[#03261f]/80 hover:text-[#03261f] transition duration-150">Safeguarding & Welfare</a>
+                    <a href="#" class="text-[#03261f]/80 hover:text-[#03261f] transition duration-150">Global Safeguarding Policy</a>
+                    <a href="#" class="text-[#03261f]/80 hover:text-[#03261f] transition duration-150">FAQs</a>
+                    <a href="#" class="text-[#03261f]/80 hover:text-[#03261f] transition duration-150">Privacy Policy</a>
+                    <a href="#" class="text-[#03261f]/80 hover:text-[#03261f] transition duration-150">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-footer-dark text-white py-8 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-t border-secondary/50 mb-6"></div> 
+                <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                    <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                        <span class="text-lg font-bold whitespace-nowrap">Follow us</span>
+                        <div class="flex space-x-4 text-2xl">
+                            <a href="https://www.instagram.com/globalachieversacademy/" aria-label="Instagram" class="hover:text-secondary transition duration-300"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/globalachieversacademy" aria-label="LinkedIn" class="hover:text-secondary transition duration-300"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/globalachieversacademy.ec" aria-label="Facebook" class="hover:text-secondary transition duration-300"><i class="fa fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-center md:text-left leading-relaxed max-w-6xl mx-auto opacity-70 mt-4 font-bold">
+Global Achievers Academy offers independent summer programmes on the campuses of prestigious academic institutions. While these courses take place at these renowned venues, they are not affiliated with or operated by the universities or schools. All of our products are delivered by our experienced Global Achievers Academy team providing our students with the opportunity of outstanding learning experiences in some of the world’s most inspiring academic environments.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="whatsapp-container wa__btn_popup_icon">
+            <span class="whatsapp-bubble">Need help? contact us</span>
+            <a href="https://wa.me/1234567890" target="_blank" aria-label="Chat on WhatsApp" 
+               class="bg-[#25D366] text-white p-3 rounded-full shadow-2xl hover:bg-[#128C7E] transition duration-300 transform hover:scale-105 flex-shrink-0">
+                <i class="fa fa-whatsapp text-2xl"></i>
+            </a>
+        </div>
+    </footer>
+
+   <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+
+            // Function to handle smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    // Check if the link points to a valid ID on the page
+                    if (targetId.length > 1 && targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start' // Scroll to the top of the element
+                        });
+                    }
+                });
+            });
+
+            // Existing filter logic
+            const filterCourses = (location) => {
+                courseCards.forEach(card => {
+                    const availableLocations = card.getAttribute('data-locations');
+                    const locationTags = card.querySelector('.location-tags-container').querySelectorAll('.location-tag'); 
+
+                    if (location === 'all') {
+                        card.style.display = 'flex';
+                        locationTags.forEach(tag => tag.style.display = 'flex');
+                    } else if (availableLocations.includes(location)) {
+                        card.style.display = 'flex';
+                        locationTags.forEach(tag => {
+                            const simpleLocation = location.split(',')[0].trim();
+                            const tagLocation = tag.getAttribute('data-tag-location');
+                            if (tagLocation === simpleLocation) {
+                                tag.style.display = 'flex';
+                            } else {
+                                tag.style.display = 'none';
+                            }
+                        });
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const location = button.getAttribute('data-location').split(',')[0].trim();
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-bg', 'text-primary-text'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+                    button.classList.add('active', 'bg-primary-bg', 'text-primary-text');
+                    button.classList.remove('bg-gray-200', 'text-gray-700');
+                    filterCourses(location);
+                });
+            });
+
+            filterCourses('all');
+        });
+    </script>
+</body>
+</html>
